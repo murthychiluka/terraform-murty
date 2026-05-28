@@ -46,7 +46,7 @@ resource "aws_route_table" "name" {
     }
   } 
   
-}
+
 # create subnet association
 resource "aws_route_table_association" "name" {
     subnet_id = "aws_subnet.name.id"
