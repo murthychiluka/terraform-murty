@@ -1,4 +1,4 @@
-variable "ami_id" {
+variable "ami" {
     description = "passing the ami value"
     default = ""
     type = string
