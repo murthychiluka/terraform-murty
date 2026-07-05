@@ -6,6 +6,7 @@
 # }
 module "name" {
     source = "../Day07-modules"
-    cidr = var.cidr
+    ami_id = var.ami_id
+    type = var.type
   
 }
