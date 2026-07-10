@@ -4,7 +4,7 @@ variable "ami_id" {
     type = string
 
 }
-variable "instance_type" {
+variable "type" {
     default = "t3.micro"
     type = string
 }
