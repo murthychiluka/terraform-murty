@@ -149,7 +149,7 @@ resource "aws_db_subnet_group" "sub_grp" {
 # resource "aws_db_instance" "replica" {
 #   identifier = "my-read-replica"
 
-#   replicate_source_db = aws_db_instance.default.arn
+#   replicate_source_db = aws_db_instance.default.identifier
 
 #   instance_class = "db.t3.micro"
 
