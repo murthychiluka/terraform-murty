@@ -146,22 +146,22 @@ resource "aws_db_subnet_group" "sub_grp" {
 
 # Create replica of the above db instance  #your task 
 
-# resource "aws_db_instance" "replica" {
-#   identifier = "my-read-replica"
+ resource "aws_db_instance" "replica" {
+  identifier = "my-read-replica"
 
-#   replicate_source_db = aws_db_instance.default.identifier
+  replicate_source_db = aws_db_instance.default.identifier
 
-#   instance_class = "db.t3.micro"
+  instance_class = "db.t3.micro"
 
-#   publicly_accessible = false
+   publicly_accessible = false
 
-#   db_subnet_group_name   = aws_db_subnet_group.sub_grp.name
-#   vpc_security_group_ids = [aws_security_group.dev_sg.id]
+   db_subnet_group_name   = aws_db_subnet_group.sub_grp.name
+   vpc_security_group_ids = [aws_security_group.dev_sg.id]
 
-#   skip_final_snapshot = true
+   skip_final_snapshot = true
 
-#   depends_on = [aws_db_instance.default]
-# }
+   depends_on = [aws_db_instance.default]
+ }
  # Redis creation is not free in free tier
 
  resource "aws_elasticache_subnet_group" "redis" {
