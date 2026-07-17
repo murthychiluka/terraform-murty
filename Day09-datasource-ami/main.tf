@@ -1,36 +1,28 @@
-data "aws_subnet" "name" {
-    filter {
-      name = "tag:Name"
-      values = ["Public-1b"]
-    }
-    #data source is used to fetch the existing resource information. Here we are fetching the subnet information based on the tag name "dev"
-  
-}
 
-data "aws_ami" "amzlinux" {
-  most_recent = true
-  owners = [ "amazon" ]
-  filter {
-    name = "name"
-    values = [ "amzn2-ami-hvm-*-gp2" ]
-  }
-             filter {
-    name = "root-device-type"
-    values = [ "ebs" ]
-  }
-        filter {
-    name = "virtualization-type"
-    values = [ "hvm" ]
-  }
-  filter {
-    name = "architecture"
-    values = [ "x86_64" ]
-  }
-}
 
 resource "aws_instance" "name" {
-    ami = data.aws_ami.amzlinux.id
-    instance_type = "t3.micro"
-    subnet_id = data.aws_subnet.name.id
-  
+    ami           = data.aws_ami.name.id
+    instance_type = var.instance_type
+    subnet_id     = aws_subnet.public_1b.id
+    associate_public_ip_address = true
+    tags = {
+        Name = var.tags["Name3"]
+    }
+}
+
+resource "aws_vpc" "name" {
+    cidr_block         = var.cidr_block
+    enable_dns_support = true
+    tags = {
+        Name = var.tags["Name1"]
+    }
+}
+
+resource "aws_subnet" "public_1b" {
+    vpc_id            = aws_vpc.name.id
+    cidr_block        = var.subnet_cidr_block
+    availability_zone = var.availability_zone
+    tags = {
+        Name = var.tags["Name2"]
+    }
 }
