@@ -9,3 +9,5 @@
 .terraform.lock.hcl
 # documents
 *.docls
+# secrets.auto.tfvars   (add this filename to .gitignore!)
+  secrets.auto.tfvars
