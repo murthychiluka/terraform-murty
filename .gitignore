@@ -11,3 +11,4 @@
 *.docls
 # secrets.auto.tfvars   (add this filename to .gitignore!)
   secrets.auto.tfvars
+  terraform.tfvars
