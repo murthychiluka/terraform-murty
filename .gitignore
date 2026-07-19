@@ -4,6 +4,10 @@
 # Terraform state files
 *.tfstate
 *.tfstate.*
+*.tfvars
+*.tfvars.json
+*.terraform.tfstate
+*.auto.tfvars
 
 # Terraform lock file
 .terraform.lock.hcl
