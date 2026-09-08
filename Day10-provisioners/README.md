@@ -181,5 +181,4 @@ User Data → Initial server bootstrap
 Ansible   → Server configuration
 Provisioner → Last resort
 
-That's a strong practical answer for a DevOps interview.
 ```
