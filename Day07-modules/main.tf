@@ -1,7 +1,8 @@
 resource "aws_instance" "name" {
+    ami = var.ami_id
+    instance_type = var.instance_type
 
-     ami = var.ami_id
-     instance_type = var.type
+    tags = {
+        Name = var.tags["Name"]
+    }
 }
-
-//
