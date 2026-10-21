@@ -1,13 +1,14 @@
 variable "ami_id" {
-    default = ""
-    type = string
-
+    description = "The AMI ID to use for the instance"
+    type        = string
 }
-variable "type" {
-   default = ""
-   type = string
-}  
 
-//variable "cidr" {
-    //type = string
-//}
+variable "instance_type" {
+    description = "The instance type to use"
+    type        = string
+}
+
+variable "tags" {
+    description = "A map of tags to assign to the instance"
+    type        = map(string)
+}
