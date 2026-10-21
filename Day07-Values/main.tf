@@ -7,6 +7,6 @@
 module "name" {
     source = "../Day07-modules"
     ami_id = var.ami_id
-    type = var.type
+    instance_type = var.instance_type
   
 }

@@ -3,7 +3,7 @@ variable "ami_id" {
     type = string
     }
 
-variable "type" {
+variable "instance_type" {
     default = ""
     type= string
 }

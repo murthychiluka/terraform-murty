@@ -8,7 +8,7 @@ variable "instance_type" {
     type        = string
 }
 
-variable "tags" {
-    description = "A map of tags to assign to the instance"
-    type        = map(string)
-}
+# variable "tags" {
+#     description = "A map of tags to assign to the instance"
+#     type        = map(string)
+# }
